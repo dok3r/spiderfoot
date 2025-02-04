@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  spiderfoot:
+    environment:
+      - NMAP_PRIVILEGED=true
+    cap_add:
+    - CAP_NET_RAW
+    - CAP_NET_ADMIN
+    - CAP_NET_BIND_SERVICE
+    image: spiderfoot
+    ports:
+      - "5001:5001"
+    restart: unless-stopped
+    container_name: spiderfoot
+    volumes:
+      - ./spiderfoot-data:/var/lib/spiderfoot
+    build:
+      context: ./
+      dockerfile: ./Dockerfile.full
+
+#volumes:
+#  spiderfoot-data:
