@@ -88,7 +88,6 @@ jobs:
           file: ${{ github.ref_name == 'kost' && 'Dockerfile.kost' || 'Dockerfile' }}
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
-                ${{ github.ref_name == 'kost' && format('{0}:kost', env.REGISTRY) || '' }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
