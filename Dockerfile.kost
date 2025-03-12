@@ -131,4 +131,4 @@ db.configSet({ \
     "sfp_tool_nuclei:template_path": "/tools/nuclei-templates", \
     "sfp_tool_wappalyzer:wappalyzer_path": "/tools/wappalyzer/src/drivers/npm/cli.js", \
     "sfp_tool_nbtscan:nbtscan_path": "/usr/bin/nbtscan", \
-})' || true && python ./sf.py -l 0.0.0.0:5001
+})' || true && ./sfconf.py -c /configs && python ./sf.py -l 0.0.0.0:5001

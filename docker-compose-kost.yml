@@ -4,6 +4,7 @@ services:
   spiderfoot:
     environment:
       - NMAP_PRIVILEGED=true
+      #- SPIDERFOOT_JSON_STRING={"sfp_abuseipdb:api_key":"example"}
     cap_add:
     - CAP_NET_RAW
     - CAP_NET_ADMIN
@@ -15,9 +16,10 @@ services:
     container_name: spiderfoot
     volumes:
       - ./spiderfoot-data:/var/lib/spiderfoot
+      #-  /opt/spiderfoot/home/.spiderfoot:/home/spiderfoot/.spiderfoot
     build:
       context: ./
-      dockerfile: ./Dockerfile.full
+      dockerfile: ./Dockerfile.kost
 
 #volumes:
 #  spiderfoot-data:
