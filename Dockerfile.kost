@@ -33,9 +33,6 @@ RUN apt-get -y update && apt-get -y install nbtscan onesixtyone nmap libcap2-bin
  wget -qO - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/googlechrome-linux-keyring.gpg \
     && echo "deb [arch=amd64 signed-by=/usr/share/keyrings/googlechrome-linux-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | tee /etc/apt/sources.list.d/google-chrome.list \
     && apt -y update && apt install --allow-unauthenticated -y google-chrome-stable && \
- git clone https://github.com/dochne/wappalyzer \
-    && cd wappalyzer \
-    && yarn install && \
  wget https://github.com/projectdiscovery/nuclei/releases/download/v2.9.15/nuclei_2.9.15_linux_amd64.zip \
     && unzip nuclei_2.9.15_linux_amd64.zip \
     && git clone https://github.com/projectdiscovery/nuclei-templates.git && \
